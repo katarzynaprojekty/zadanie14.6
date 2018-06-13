@@ -16,7 +16,31 @@ var Counter = React.createClass({
 			counter: this.state.counter -1
 		});
 	},
-
+	// -----------------stany----------------------------
+	componentWillMount: function() {
+        console.log('Component is ready to mount...');
+    },
+    componentDidMount: function() {
+        console.log('Component mounted!');
+    },
+    componentWillReceiveProps: function() {
+        console.log('Component gets props.');
+    },
+    shouldComponentUpdate: function() {
+        console.log('Component gets new state!');
+        return true;
+    },
+    componentWillUpdate: function() {
+        console.log('Updating component!');
+    },
+    componentDidUpdate: function() {
+        console.log('Component updated.');
+    },
+    componentWillUnmount: function() {
+        console.log('Component is ready to unmount...');
+    },
+	// -----------------stany----------------------------
+	
     render: function() {
         return React.createElement('div', {},
             React.createElement('button', { onClick: this.increment, style: {
